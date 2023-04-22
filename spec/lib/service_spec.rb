@@ -23,7 +23,7 @@ describe JamComments::Service do
             headers: hash_including(
               Authorization: "Bearer abc123",
               Accept: "application/json",
-              "X-Platform": "jekyll"
+              "X-Platform": "bridgetown"
             ),
           }
         ).and_return(OpenStruct.new(
@@ -56,7 +56,7 @@ describe JamComments::Service do
             headers: hash_including(
               Authorization: "Bearer abc123",
               Accept: "application/json",
-              "X-Platform": "jekyll"
+              "X-Platform": "bridgetown"
             ),
           }
         ).and_return(OpenStruct.new(

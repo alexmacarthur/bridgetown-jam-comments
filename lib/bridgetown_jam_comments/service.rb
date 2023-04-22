@@ -30,7 +30,7 @@ module JamComments
         headers: {
           Authorization: "Bearer #{api_key}",
           Accept: "application/json",
-          "X-Platform": "jekyll",
+          "X-Platform": "bridgetown",
         },
       }
 

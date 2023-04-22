@@ -4,4 +4,4 @@ A Ruby gem for setting up your [Bridgetown](https://www.bridgetownrb.com/) blog 
 
 ## This Package's Documentation
 
-...coming soon!
+Coming soon! Until then, refer to the [Jekyll integration documentation](https://jamcomments.com/docs/integrations/jekyll/). It's similar.
