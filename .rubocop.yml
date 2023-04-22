@@ -1,0 +1,14 @@
+inherit_gem:
+  rubocop-bridgetown: .rubocop.yml
+
+Metrics/ParameterLists:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Layout/LineLength:
+  Enabled: false
+
+Style/OpenStructUse:
+  Enabled: false
