@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    bridgetown_jam_comments (0.0.2)
+    bridgetown_jam_comments (1.0.0)
       bridgetown
       httparty
 
@@ -15,7 +15,7 @@ GEM
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-    addressable (2.8.4)
+    addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     amazing_print (1.4.0)
     ast (2.4.2)
@@ -80,13 +80,13 @@ GEM
     faraday-retry (1.0.3)
     faraday_middleware (1.2.0)
       faraday (~> 1.0)
-    ffi (1.15.5)
+    ffi (1.16.3)
     hash_with_dot_access (1.2.0)
       activesupport (>= 5.0.0, < 8.0)
     httparty (0.21.0)
       mini_mime (>= 1.0.0)
       multi_xml (>= 0.5.2)
-    i18n (1.12.0)
+    i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     json (2.6.3)
     kramdown (2.4.0)
@@ -98,7 +98,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     method_source (1.0.0)
-    mini_mime (1.1.2)
+    mini_mime (1.1.5)
     minitest (5.18.0)
     multi_xml (0.6.0)
     multipart-post (2.3.0)
@@ -108,7 +108,7 @@ GEM
     pry (0.14.2)
       coderay (~> 1.1)
       method_source (~> 1.0)
-    public_suffix (5.0.1)
+    public_suffix (5.0.3)
     rack (3.0.7)
     rainbow (3.1.1)
     rake (13.0.6)

@@ -4,7 +4,7 @@ require "pry"
 
 module JamComments
   class Renderer
-    CLIENT_SCRIPT_URL = "https://unpkg.com/@jam-comments/client@2.0.0-beta.2/dist/index.umd.js"
+    CLIENT_SCRIPT_URL = "https://unpkg.com/@jam-comments/client@2.3.2/dist/index.umd.js"
 
     attr_reader :provided_configuration
 

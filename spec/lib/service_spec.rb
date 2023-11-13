@@ -13,7 +13,7 @@ describe JamComments::Service do
         )
 
         expect(client).to receive(:get).with(
-          "https://go.jamcomments.com/api/v2/markup",
+          "https://go.jamcomments.com/api/v3/markup",
           {
             query: hash_including(
               path: "/path",
@@ -46,7 +46,7 @@ describe JamComments::Service do
         )
 
         expect(client).to receive(:get).with(
-          "http://localhost/api/v2/markup",
+          "http://localhost/api/v3/markup",
           {
             query: hash_including(
               path: "/path",
@@ -87,6 +87,39 @@ describe JamComments::Service do
           instance.fetch(path: "/path")
         end
           .to raise_error("Oh no! It looks like your credentials for JamComments are incorrect.")
+      end
+    end
+
+    context "timezone" do
+      it "passes tz" do
+        instance = described_class.new(
+          domain: "example.com",
+          api_key: "abc123",
+          tz: "America/New_York",
+          client: client
+        )
+
+        expect(client).to receive(:get).with(
+          "https://go.jamcomments.com/api/v3/markup",
+          {
+            query: hash_including(
+              path: "/path",
+              domain: "example.com",
+              stub: nil,
+              tz: "America/New_York"
+            ),
+            headers: hash_including(
+              Authorization: "Bearer abc123",
+              Accept: "application/json",
+              "X-Platform": "bridgetown"
+            ),
+          }
+        ).and_return(OpenStruct.new(
+                       code: 200,
+                       body: "html!"
+                     ))
+
+        instance.fetch(path: "/path")
       end
     end
 

@@ -1,6 +1,12 @@
 inherit_gem:
   rubocop-bridgetown: .rubocop.yml
 
+AllCops:
+  TargetRubyVersion: 2.7.2
+
+Gemspec/DevelopmentDependencies:
+  Enabled: false
+
 Metrics/ParameterLists:
   Enabled: false
 
@@ -11,4 +17,7 @@ Layout/LineLength:
   Enabled: false
 
 Style/OpenStructUse:
+  Enabled: false
+
+Naming/MethodParameterName:
   Enabled: false
