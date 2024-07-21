@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 require "bridgetown"
-require_relative "./bridgetown_jam_comments/builder"
+require_relative "bridgetown_jam_comments/builder"
 
 Bridgetown.initializer :bridgetown_jam_comments do |config, domain: nil, api_key: nil, base_url: nil, environment: nil|
   config.bridgetown_jam_comments ||= {}

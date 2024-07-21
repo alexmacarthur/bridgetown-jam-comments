@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
-require_relative "./service"
-require_relative "./renderer"
-require_relative "./configuration"
+require_relative "service"
+require_relative "renderer"
+require_relative "configuration"
 
 module JamComments
   class Builder < Bridgetown::Builder

@@ -4,7 +4,7 @@ require "httparty"
 
 module JamComments
   class Service
-    attr_reader :base_url, :tz, :environment, :domain, :api_key, :client
+    attr_reader :base_url, :tz, :environment, :domain, :api_key, :client, :copy
 
     def initialize(
       domain:,
@@ -12,9 +12,11 @@ module JamComments
       base_url: nil,
       environment: nil,
       tz: nil,
+      copy: {},
       client: HTTParty
     )
       @tz = tz
+      @copy = copy
       @client = client
       @domain = domain
       @api_key = api_key
@@ -24,12 +26,7 @@ module JamComments
 
     def fetch(path:)
       options = {
-        query: {
-          path: formatted_path(path),
-          domain: domain,
-          stub: stub_value,
-          tz: tz,
-        },
+        query: request_query_params(path),
         headers: {
           Authorization: "Bearer #{api_key}",
           Accept: "application/json",
@@ -41,6 +38,15 @@ module JamComments
     end
 
     private
+
+    def request_query_params(path)
+      {
+        path: formatted_path(path),
+        domain: domain,
+        stub: stub_value,
+        tz: tz,
+      }.merge(copy)
+    end
 
     def send_request(options)
       response = client.get(endpoint, options)
