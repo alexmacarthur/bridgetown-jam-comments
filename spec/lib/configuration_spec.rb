@@ -42,4 +42,40 @@ describe JamComments::Configuration do
       expect(subject.environment).to eq("bridgetown_env")
     end
   end
+
+  describe("copy") do
+    it("returns correct values") do
+      subject = described_class.new({
+        "copy" => {
+          "confirmation_message" => "Thanks for the comment!",
+          "submit_button"        => "Post Comment",
+          "name_placeholder"     => "Your Name",
+          "email_placeholder"    => "Your Email",
+          "comment_placeholder"  => "Your Comment",
+          "write_tab"            => "Write",
+          "preview_tab"          => "Preview",
+          "auth_button"          => "Log In",
+          "log_out_button"       => "Log Out",
+        },
+      })
+
+      expect(subject.copy).to eq({
+        copy_confirmation_message: "Thanks for the comment!",
+        copy_submit_button: "Post Comment",
+        copy_name_placeholder: "Your Name",
+        copy_email_placeholder: "Your Email",
+        copy_comment_placeholder: "Your Comment",
+        copy_write_tab: "Write",
+        copy_preview_tab: "Preview",
+        copy_auth_button: "Log In",
+        copy_log_out_button: "Log Out",
+      })
+    end
+
+    it("returns nil for missing keys") do
+      subject = described_class.new({})
+
+      expect(subject.copy).to eq({})
+    end
+  end
 end

@@ -25,7 +25,7 @@ module JamComments
     end
 
     def copy
-      original_copy = configuration["copy"] || {}
+      original_copy = config["copy"] || {}
 
       {
         copy_confirmation_message: original_copy["confirmation_message"],
@@ -37,7 +37,7 @@ module JamComments
         copy_preview_tab: original_copy["preview_tab"],
         copy_auth_button: original_copy["auth_button"],
         copy_log_out_button: original_copy["log_out_button"],
-      }.compact! { |_key, value| value.nil? }
+      }.compact
     end
   end
 end
